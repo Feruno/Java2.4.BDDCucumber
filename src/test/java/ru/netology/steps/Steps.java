@@ -31,7 +31,7 @@ public class Steps {
         verificationPage = loginPageV1.validLoginForCucumber(login, pass);
     }
 
-    @И("пользователь вводит провероченый код 'из смс' {string}")
+    @И("пользователь вводит проверочный код 'из смс' {string}")
     public void validCode(String verifCode) {
         dashBoardPage = verificationPage.validVerifyForCucumber(verifCode);
     }
@@ -56,7 +56,7 @@ public class Steps {
         $("[data-test-id='action-transfer'] span").click();
     }
 
-    @Тогда("баланс его первой карте из списка на главной странице должен стать {int} рублей.")
+    @Тогда("баланс его первой карты из списка на главной странице должен стать {int} рублей.")
     public void validTransaction(Integer sumAfterTransaction) {
         int res = dashBoardPage.getFirstCardBalance();
         Assertions.assertEquals(res, sumAfterTransaction);
