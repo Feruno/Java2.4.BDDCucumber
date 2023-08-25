@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/b505rrpraid4ywoe?svg=true)](https://ci.appveyor.com/project/Feruno/java2-4-bddcucumber)
