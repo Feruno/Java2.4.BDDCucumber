@@ -16,9 +16,11 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
 
+
     testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.10.0'
-    //testImplementation group: 'org.jmock', name: 'jmock-junit4', version: '2.12.0'
-    //testImplementation group: 'io.quarkus', name: 'quarkus-junit5', version: '3.2.4.Final'
+    testImplementation group: 'org.jmock', name: 'jmock-junit4', version: '2.12.0'
+    testImplementation group: 'io.quarkus', name: 'quarkus-junit5', version: '3.2.4.Final'
+    
 
     implementation group: 'com.codeborne', name: 'selenide', version: '6.17.0'
     testImplementation 'io.cucumber:cucumber-java:7.1.0'
