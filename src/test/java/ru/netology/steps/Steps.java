@@ -43,23 +43,18 @@ public class Steps {
 
     @И("выбирает пополнить {int} карту")
     public void choseCard(Integer numCountCard) {
-        dashBoardPage.cardSelection(numCountCard);
-        //dashBoardPage.getFirstCardBalance();
+        transactionPage = dashBoardPage.cardSelection(numCountCard);
     }
 
     @Когда("пользователь переводит {string} рублей с карты с номером {string} на свою первую карту с главной страницы")
     public void validTransactionInfo(String sum, String numCard) {
-
-        //transactionPage.setInfoTransactionSecondCardForCucumber(sum, numCard);
-        $("[data-test-id='amount'] input").setValue(sum);
-        $("[data-test-id='from'] input").setValue(numCard);
-        $("[data-test-id='action-transfer'] span").click();
+        transactionPage.setInfoTransactionSecondCardForCucumber(sum, numCard);
     }
 
     @Тогда("баланс его первой карты из списка на главной странице должен стать {int} рублей.")
-    public void validTransaction(Integer sumAfterTransaction) {
-        int res = dashBoardPage.getFirstCardBalance();
-        Assertions.assertEquals(res, sumAfterTransaction);
+    public void validTransaction(Integer expectedSumAfterTransaction) {
+        int actual = dashBoardPage.getFirstCardBalance();
+        Assertions.assertEquals(expectedSumAfterTransaction, actual);
     }
 
 }
