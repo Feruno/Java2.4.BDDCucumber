@@ -51,9 +51,9 @@ public class Steps {
         transactionPage.setInfoTransactionSecondCardForCucumber(sum, numCard);
     }
 
-    @Тогда("баланс его первой карты из списка на главной странице должен стать {int} рублей.")
-    public void validTransaction(Integer expectedSumAfterTransaction) {
-        int actual = dashBoardPage.getFirstCardBalance();
+    @Тогда("баланс его {int} карты из списка на главной странице должен стать {int} рублей.")
+    public void validTransaction(Integer numCard, Integer expectedSumAfterTransaction) {
+        int actual = dashBoardPage.getCardBalance(numCard);
         Assertions.assertEquals(expectedSumAfterTransaction, actual);
     }
 
