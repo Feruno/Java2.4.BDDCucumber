@@ -41,13 +41,9 @@ public class Steps {
         dashBoardPage.verifyDashboadrPage();
     }
 
-    @И("выбирает пополнить {int} карту")
-    public void choseCard(Integer numCountCard) {
+    @Когда("пользователь переводит {string} рублей с карты с номером {string} на свою {int} карту с главной страницы")
+    public void validTransactionInfo(String sum, String numCard, Integer numCountCard) {
         transactionPage = dashBoardPage.cardSelection(numCountCard);
-    }
-
-    @Когда("пользователь переводит {string} рублей с карты с номером {string} на свою первую карту с главной страницы")
-    public void validTransactionInfo(String sum, String numCard) {
         transactionPage.setInfoTransactionSecondCardForCucumber(sum, numCard);
     }
 
